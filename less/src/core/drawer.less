@@ -1,0 +1,249 @@
+@drawer-item-padding: @item-padding;
+@drawer-item-padding-top: @item-padding;
+@drawer-item-padding-bottom: @item-padding;
+@drawer-item-padding-left: @item-padding;
+@drawer-item-padding-right: @item-padding;
+
+//****** Drawer styling ******//
+.drawer {
+    background-color: @drawer-color;
+    color: @drawer-item-text-color;
+
+    .page-level-progress-item-optional-text {
+        display: none;
+    }
+
+    // moved out of .drawer-inner | when drawer contains a lot of items border gets cut short
+    border-left: 5px solid @drawer-border-color;
+    .dir-rtl & {
+        border-left: inherit;
+        border-right: 5px solid @drawer-border-color;
+    }
+    // ==========================
+
+    .drawer-toolbar {
+        position: absolute;
+        width:100%;
+        top:0;
+        border-bottom: 1px solid @drawer-border-color;
+    }
+
+    @drawer-toolbar-icon-padding: 20px;
+
+    .drawer-toolbar .icon {
+        color: @drawer-icon-color;
+        padding: @drawer-toolbar-icon-padding;
+        .transition-color;
+
+        .no-touch &:hover {
+            color: @drawer-icon-color-hover;
+        }
+    }
+    
+    .drawer-holder {
+        padding-top: ((@drawer-toolbar-icon-padding * 2) + @icon-size + 1);
+    }
+
+    /* .drawer-inner { } */
+
+    .drawer-item, .glossary-item, .search-result {
+        border-bottom: 1px solid @white-transparent-hard;
+
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+
+    .drawer-item {
+        .drawer-item-title {
+            .h5 {
+                font-weight: @font-weight-regular !important;
+            }
+        }
+        
+        .drawer-item-description {
+        	font-size: @body-text-font-size;
+        	line-height: @body-text-line-height;
+        }
+
+        .drawer-item-description-inner {
+            .small;
+        }
+        
+        .drawer-item-open {
+            border-bottom: 1px solid @drawer-item-color;
+            color: @drawer-item-text-color;
+            text-decoration: none;
+            width: 100%;
+            
+            .no-touch &:hover {
+                background-color: @drawer-item-color-hover;
+                color: @drawer-item-text-color-hover;
+            }
+        }
+    }
+
+    .drawer-item-open {
+        padding: @drawer-item-padding-top @drawer-item-padding-right @drawer-item-padding-bottom @drawer-item-padding-left;
+        .transition-background-color;
+
+        // stop rollover of drawer items on touch devices    
+        .no-touch &:hover {
+             background-color: @drawer-color;
+       }
+    }
+}
+
+
+
+// Resources | Drawer
+.resources {
+    .resources-filter button {
+        color: @drawer-item-text-color;
+        border-bottom: 1px solid @drawer-border-color;
+        .transition-all-colors;
+        padding: 0; 
+        font-size: @body-text-font-size;
+        text-align: center;
+
+        span {
+            border: none;
+            padding: 15px 0px;
+        }
+
+        &.selected {
+            color: @drawer-item-text-color-selected;
+            background-color: @drawer-item-color-selected;
+            border-bottom: 1px solid @drawer-item-color-selected;
+        }
+
+        .no-touch &:hover {
+            color:  @drawer-item-text-color-hover;
+            background-color: @drawer-item-color-hover;
+            border-bottom: 1px solid @drawer-item-color-hover;
+        }
+    }
+}
+
+// Glossary | Drawer
+.glossary-textbox-container {
+	.glossary-textbox-label {
+		margin: 0 6px !important;
+	}
+	.glossary-textbox {
+		width: 70% !important;
+	}
+	.glossary-cancel-button {
+		right: 17px !important;
+	}
+}
+
+.glossary-checkbox-container {
+    .glossary-checkbox-label {
+        .small !important;
+    }
+    .glossary-checkbox {
+        margin-left: 13px !important;
+    }
+}
+
+.glossary-item-term {
+    border: 0 !important;
+    .h5 {
+        font-weight: @font-weight-regular;
+    }
+}
+
+.glossary-item-description-inner {
+    p:last-child { .mb-0; } 
+}
+
+// Search | Drawer
+.search-results {
+    button {
+        .no-touch & {
+            &:hover,
+            &.visited:hover,
+            &.selected:hover {
+                border-bottom: 1px solid @white-transparent-hard !important;
+
+                &:last-child {
+                    border-bottom: 0 !important;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+// Drawer | Page level Progress
+// ============================
+.drawer {
+    .page-level-progress-item-optional-text {
+        display: none;
+    }
+
+    .page-level-progress-item-title {
+    	background-color: @drawer-item-color;
+    	color: @drawer-item-text-color;
+        .transition-all-colors;
+
+    	&.drawer-item-open.disabled {
+    		background-color: @drawer-item-color-disabled;
+    		color: @drawer-item-text-color-disabled;
+    		font-size: @button-text-font-size;
+	        font-weight: @font-weight-light;
+
+            .no-touch &:hover {
+                background-color: @drawer-item-color-disabled;
+                color: @drawer-item-text-color-disabled;
+
+                .page-level-progress-indicator {
+                    background-color: transparent;
+                }
+            }
+    	}
+
+        .no-touch &:hover {
+            background-color: @drawer-item-color-hover;
+            color: @drawer-item-text-color-hover;
+
+            .page-level-progress-indicator {
+                background-color: @drawer-progress-color-hover;
+            }
+
+            .page-level-progress-indicator-incomplete {
+                background-color: @drawer-item-color;
+            }
+        }
+    }
+}
+
+.page-level-progress-item-title-inner {
+    width:80%;
+
+    &.h5 {
+        font-weight: @font-weight-regular;
+    }
+}
+
+.page-level-progress-indicator {
+    width: 15%;
+    height: 8px;
+    border: 1px solid @drawer-progress-border-color;
+	background-color: transparent;
+    .transition-background-color;
+}
+
+.page-level-progress-indicator-complete {
+    .page-level-progress-indicator-bar {
+        background-color: @drawer-progress-color;
+        .transition-background-color;
+
+        &:hover {
+            background-color: @drawer-progress-color-hover;
+        }
+    }
+}

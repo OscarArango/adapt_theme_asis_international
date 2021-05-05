@@ -1,0 +1,54 @@
+// General
+// =======
+.pagelevelprogress-indicator-bar {
+  transition: width 0.3s ease-in;
+}
+
+// Navigation PLP
+// ==============
+.pagelevelprogress-navigation.base {
+  height: @navigation-height;
+  padding: 0 !important; // Override default in extension
+  margin: 0 10px 0 0;
+
+  .no-touch &:hover {
+    .pagelevelprogress-indicator {
+      background-color: @navigation-progress-background-color-hover;
+      border-color: @navigation-progress-border-color;
+    }
+
+    .pagelevelprogress-indicator-inner {
+      border-color: @navigation-progress-background-color-hover;
+    }
+
+    .pagelevelprogress-indicator-bar {
+      background-color: @navigation-progress-color-hover;
+      //border-color: @navigation-progress-border-color;
+    }
+
+    .page-level-progress-plus-icon {
+      color: @navigation-progress-color;
+    }
+  }
+
+  .pagelevelprogress-indicator {
+    transition: all 0.3s ease-in;
+    background-color: @navigation-progress-background-color;
+    border: 2px solid @navigation-progress-border-color;
+    border-radius: 50px;
+  }
+
+  .pagelevelprogress-indicator-inner {
+    border: 1px solid @navigation-progress-background-color;
+  }
+
+  .pagelevelprogress-indicator-bar {
+    left: 0;
+    background-color: @navigation-progress-color;
+
+    .dir-rtl & {
+      right: 0;
+      left: auto;
+    }
+  }
+}

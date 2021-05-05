@@ -1,0 +1,249 @@
+//****** Detailed Font Setup ******//
+//@import url(//fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+//@import url(//fonts.googleapis.com/css?family=Lato:300,400,700);
+
+
+
+/*!
+	Lato font.
+*/
+/* Lato (light, regular) */
+@font-face {
+font-family: Lato;
+font-weight: 300;
+font-style: normal;
+text-rendering: optimizeLegibility;
+src: url("fonts/lato-light.woff2") format("woff2"), url("fonts/lato-light.woff") format("woff");
+}
+
+/* Lato (light, italic) */
+@font-face {
+font-family: Lato;
+font-weight: 300;
+font-style: italic;
+text-rendering: optimizeLegibility;
+src: url("fonts/lato-light-italic.woff2") format("woff2"),
+    url("fonts/lato-light-italic.woff") format("woff");
+}
+
+/* Lato (medium, regular) */
+@font-face {
+font-family: "Lato Medium";
+font-weight: 400;
+font-style: normal;
+text-rendering: optimizeLegibility;
+src: url("fonts/lato-medium.woff2") format("woff2"),
+    url("fonts/lato-medium.woff") format("woff");
+}
+
+/* Lato (medium, italic) */
+@font-face {
+font-family: "Lato Medium";
+font-weight: 400;
+font-style: italic;
+text-rendering: optimizeLegibility;
+src: url("fonts/lato-medium-italic.woff2") format("woff2"),
+    url("fonts/lato-medium-italic.woff") format("woff");
+}
+
+/* Lato (bold, regular) */
+@font-face {
+font-family: Lato;
+//font-weight: 600;
+font-style: normal;
+text-rendering: optimizeLegibility;
+src: url("fonts/lato-bold.woff2") format("woff2"),
+    url("fonts/lato-bold.woff") format("woff");
+}
+
+/* Lato (bold, italic) */
+@font-face {
+font-family: Lato;
+//font-weight: 600;
+font-style: italic;
+text-rendering: optimizeLegibility;
+src: url("fonts/lato-bold-italic.woff2") format("woff2"),
+    url("fonts/lato-bold-italic.woff") format("woff");
+}
+
+@font-family-title: Lato, sans-serif;
+@font-family: "Lato Medium", sans-serif;
+
+@font-weight-light: 300;
+@font-weight-regular: 400; // normal;
+@font-weight-bold: 600;
+
+@menu-title-font-size: 2.25rem;         // 36px;
+@page-title-font-size: @menu-title-font-size;
+@article-title-font-size: 2.125rem;     // 34px;
+@component-title-font-size: 2rem;       // 32px;
+@item-title-font-size: 1.75rem;         // 28px;
+@sub-title-font-size: 1.125rem;         // 18px;
+
+@body-text-font-size: 1.125rem;         // 18px;
+@instruction-text-font-size: 0.875rem;  // 14px;
+@button-text-font-size: 1.125rem;       // 18px;
+
+@title-line-height: 120%;
+@body-line-height: 1.5;
+@icon-size: 24px;
+
+
+//****** Detailed Font Setup ******//
+@menu-title-font-weight: @font-weight-bold;
+@menu-title-line-height: @title-line-height;
+
+@page-title-font-weight: @font-weight-bold;
+@page-title-line-height: @title-line-height;
+
+@component-title-font-weight: @font-weight-bold;
+@component-title-line-height: @title-line-height;
+
+@item-title-font-weight: @font-weight-regular;
+@item-title-line-height: @title-line-height;
+
+@sub-title-font-weight: @font-weight-light;
+@sub-title-line-height: @title-line-height;
+
+@body-text-font-weight: @font-weight-regular;
+@body-text-line-height: @body-line-height;
+
+@instruction-text-font-weight: @font-weight-regular;
+@instruction-text-line-height: @body-line-height;
+
+@button-text-font-weight: @font-weight-regular;
+@button-text-line-height: @body-line-height;
+
+html {
+    font-size: 16px;
+}
+
+body {
+    color: @font-color;
+    font-family: @font-family;
+    font-weight: @body-text-font-weight;
+    line-height: @body-text-line-height;
+
+    p {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+//****** Variable font styling ******//
+.boxmenu-menu .menu-body-inner,
+.article .article-body-inner,
+.block .block-body-inner,
+.component .component-inner,
+.notify .notify-popup-body-inner,
+.p-font-size {
+    font-size: @body-text-font-size;
+    line-height: @body-text-line-height;
+}
+
+.item-title {
+    .h4; // uses h4 formatting
+}
+
+.sub-title {
+    .h5; // uses h5 formatting
+}
+
+.instruction-text {
+    font-size: @instruction-text-font-size;
+    font-weight: @instruction-text-font-weight;
+    line-height: @instruction-text-line-height;
+}
+
+.notify-popup-title {
+    .h5 { .h3; } // uses h3 formatting (same as component titles). Notify's default title size is an h5 (h5 class).
+}
+
+.button-text {
+    font-size: @button-text-font-size;
+    font-weight: @button-text-font-weight;
+    line-height: @button-text-line-height;
+}
+
+//****** Tag styling ******//
+// Lists
+ol, ul {
+    //padding: 0 0 0 1.125rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    list-style-position: outside;
+}
+
+ol ol, ul ul, ol ul, ul ol {
+    margin-bottom: 0;
+    padding: 0;
+}
+
+ol ol {
+    list-style-type: lower-alpha;
+}
+
+// Miscellaneous
+b, strong, th  { font-family: @font-family-title; font-weight: @font-weight-bold; }
+
+.big { font-size: 120%; }
+
+small, .small {
+    font-size: 80%;
+    font-weight: @font-weight-regular;
+    line-height: 1.1rem;
+}
+
+select {
+    font-size: @body-text-font-size;
+    line-height: @body-text-line-height; //140%;
+    font-weight: @font-weight-light;
+}
+
+// Superscript / Subscript
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sub { bottom: -.25em }
+sup { top: -.5em; }
+
+// Links
+a {
+    background-color: transparent;
+    text-decoration-skip-ink: none;
+    -webkit-text-decoration-skip: objects;
+}
+
+a:not([href]):not([tabindex]),
+a:not([href]):not([tabindex]):hover,
+a:not([href]):not([tabindex]):focus {
+    //color: inherit;
+    text-decoration: none;
+}
+
+a:not([href]):not([tabindex]):focus { outline: 0; }
+[tabindex="-1"]:focus:not(:focus-visible) { outline: 0 !important; }
+
+// Headings
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    margin-top: 0;
+    margin-bottom: 0; //0.5rem;
+    font-family: @font-family-title;
+    font-weight: @font-weight-bold;
+    line-height: 1.2;
+}
+
+h5, h6 { margin-bottom: 0.5rem; }
+h1, .h1 { font-size: 2.25rem; }
+h2, .h2 { font-size: 2rem; }
+h3, .h3 { font-size: 1.75rem; }
+h4, .h4 { font-size: 1.5rem; }
+h5, .h5 { font-size: 1.25rem; }
+h6, .h6 { font-size: 1rem; }
+
+//.page-title-inner.h1 { font-weight: bold; }

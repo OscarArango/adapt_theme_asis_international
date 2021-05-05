@@ -1,0 +1,49 @@
+//****** Quicknav styling ******//
+.quicknav-widget { // align buttons to the right
+    //text-align: right !important;
+    
+    @media all and (max-width: (@device-width-small + 20px))  {
+        text-align: center !important;
+    }
+}
+
+.quicknav-inner.component-inner {
+    padding: 10px 20px !important;
+}
+
+.quicknav {
+    .tooltip  { display: none !important; }
+
+    button {
+        padding: 16px;
+
+        // Quicknav icons 
+        &.disabled, &:disabled {
+            .icon, .icon:hover { color: @quicknav-icon-color-disabled !important; }
+        }
+
+        .icon {
+            color: @quicknav-icon-color !important;
+            .transition-all-colors;
+
+            .no-touch & {
+                &:hover { color: @quicknav-icon-color-hover !important; }
+                &[disabled="disabled"]:hover { color: @quicknav-icon-color-disabled !important; }
+                &.visited:hover { color: @quicknav-icon-color-visited !important; }
+                &.selected:hover { color: @quicknav-icon-color-hover !important; }
+            }
+        }
+        
+        // Quicknav buttons background colour 
+        background: @quicknav-icon-background;
+
+        &.disabled, &:disabled { background: @quicknav-icon-background-disabled; }
+
+        .no-touch & {
+            &:hover { background: @quicknav-icon-background-hover; }
+            &[disabled="disabled"]:hover { background: @quicknav-icon-background-disabled; }
+            &.visited:hover { background: @quicknav-icon-background-hover; }
+            &.selected:hover { background: @quicknav-icon-background-hover; }
+        }
+    }
+}

@@ -1,0 +1,101 @@
+.hotgraphic-component {
+	.hotgraphic-graphic-pin {
+		background-color: @hotgraphic-graphic-pin-background-color;
+
+		.no-touch & {
+			&:hover {
+				background-color: @hotgraphic-graphic-pin-background-hover-color;
+				
+				.hotgraphic-graphic-pin-icon {
+					color: @hotgraphic-graphic-pin-icon-color;
+				}
+			}
+		}
+
+		&.visited {
+			background-color: @hotgraphic-graphic-pin-background-visited-color;
+
+			.hotgraphic-graphic-pin-icon {
+				color: @hotgraphic-graphic-pin-icon-color;
+			}
+
+			.no-touch & {
+				&:hover {
+					background-color: @hotgraphic-graphic-pin-background-visited-hover-color;
+
+					.hotgraphic-graphic-pin-icon {
+						color: @hotgraphic-graphic-pin-icon-color;
+					}
+				}
+			}
+		}
+	}
+
+	.hotgraphic-graphic-pin-icon {
+		font-size: 30px;
+		height: 30px;
+		width: 30px;
+		color: @hotgraphic-graphic-pin-icon-color;
+	}
+
+	.icon-pin:before {
+		content: "\e636"; // change icon to a plus sign
+	}
+}
+
+.notify.hotgraphic {
+	.notify-popup-content-inner {
+		.hotgraphic-popup {
+			border: @hotgraphic-popup-border;
+			background-color: @hotgraphic-popup-background-color;
+		}
+
+		.hotgraphic-popup-toolbar {
+			height: 50px;
+			background-color: @hotgraphic-popup-toolbar-background-color;
+		}
+
+		/* .hotgraphic-popup-nav { } */
+
+		.hotgraphic-popup-done {
+			.no-touch &:hover {
+				.hotgraphic-popup-close {
+					color: @hotgraphic-popup-toolbar-text-color;
+				}
+			}
+		}
+
+		.hotgraphic-popup-count,
+		.hotgraphic-popup-arrow-l,
+		.hotgraphic-popup-arrow-r,
+		.hotgraphic-popup-close {
+			color: @hotgraphic-popup-toolbar-text-color;
+			padding: 14px;
+		}
+
+		.hotgraphic-popup-count {
+			font-size: 16px;
+			vertical-align: middle;
+		}
+
+		.hotgraphic-popup-controls {
+			.no-touch &:hover {
+				.hotgraphic-popup-arrow-l,
+				.hotgraphic-popup-arrow-r {
+					color: @hotgraphic-popup-toolbar-text-color;
+				}
+			}
+		}
+
+		.hotgraphic-popup-inner {
+			padding: @item-padding;
+		}
+
+		.hotgraphic-content-title {
+			.item-title;
+			margin-bottom: @title-text-margin;
+			font-weight: @font-weight-regular;
+			color: @hotgraphic-content-title-color;
+		}
+	}
+}

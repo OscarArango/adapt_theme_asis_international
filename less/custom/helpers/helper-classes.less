@@ -1,0 +1,329 @@
+//****** Miscellaneous ******//
+// add where needed
+.mt-20px { margin-top: 20px !important; }
+
+.title-mb { margin-bottom: @title-text-margin; }
+
+.fastFact {
+    margin-bottom: 0;
+    height: 40px;
+
+    @media all and (max-width: (@device-width-small + 20px)) and (orientation: portrait) {
+        height: 90px;
+    }
+}
+
+.component-inner {
+    // add to components where needed
+    .tighten-spacing & { padding-bottom: 0.5rem !important; }
+    .pb-0-component & { padding-bottom: 0 !important; }
+}
+
+.text-decoration-none {
+    a { text-decoration: none; }
+}
+
+.wb-ba { word-break: break-all; }
+
+span.nobreak { white-space: nowrap; }
+
+// add to blocks where needed
+.block-inner {
+    .block-normal-padding & { padding-top: 0 !important; }
+}
+
+//****** Quicknav ******//
+.quicknav-normal-padding { // set at component level (if needed)
+    .quicknav-inner.component-inner { padding: @component-padding !important; }
+}
+
+.text-left-of-nav { // set at component level (text component to the left of the quicknav)
+	.text-body.component-body {
+		p:last-child {
+            margin-bottom: 0;
+        }
+		margin: 0;
+		padding: 0;
+		height: 80px; //60px;
+		display: table-cell;
+        vertical-align: middle;
+        
+        @media all and (max-width: (@device-width-small + 20px))  {
+            height: 50px; //60px;
+        }
+    }
+    
+    .text-inner.component-inner {
+        @media all and (max-width: (@device-width-small + 20px))  {
+            padding-bottom: 0 !important;
+        }
+    }
+}
+
+//****** Glossary Term pop-up ******//
+//  add class to Can Notify span tag
+.glossaryTerm {
+    font-size: inherit;
+    line-height: inherit;
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+    color: @glossaryTerm;
+    font-weight: @font-weight-bold;
+    text-decoration: none !important;
+    text-decoration-skip-ink: none;
+
+    .no-touch & {
+        &:hover {
+            color: @glossaryTerm-hover;
+            text-decoration: underline;
+            text-decoration-skip-ink: none;
+        }
+
+        &.visited:hover {
+            color: @glossaryTerm-hover;
+            text-decoration: underline;
+            text-decoration-skip-ink: none;
+        }
+
+        &.selected:hover {
+            color: @glossaryTerm-hover;
+            text-decoration: underline;
+            text-decoration-skip-ink: none;
+        }
+    }
+}
+
+//****** Tables ******//
+@media all and (max-width: @device-width-medium) {
+    .responsive-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.td-width-50 { 
+    td, th  { width: 50%; }
+} 
+
+.td-width-25 { 
+    td, th  { width: 25%; }
+} 
+
+.td-width-20 { 
+    td, th  { width: 20%; }
+}
+
+.td-width-33 { 
+    td, th  { width: 33.3333%; }
+} 
+
+.no-bg-color {
+    tr, th { 
+        background: transparent !important;
+        td {
+            border: 0 !important;
+        } 
+    }
+}
+
+.remove-td-padding {
+    td { padding: 0; }
+}
+
+table.stack td {
+    &:nth-child(odd) { padding-right: 20px; }
+    &:nth-child(even) { padding-left: 20px; }
+
+    @media only screen and (max-width: 480px)  { // stack on mobile if needed | right column stacks under left
+        ul { 
+            margin-bottom: 0; 
+        }
+        display:block;
+        width:100%;
+        &:nth-child(odd) {
+            padding-right: 0;
+            padding-bottom: 20px;
+        }
+        &:nth-child(even) {
+            padding-left: 0;
+            padding-top: 0;
+        }
+    }
+}
+
+//****** Tabs CTL ******//
+.hide-tab-title { // hides one title | add to each tab that needs the title to be hidden
+	.tabCTL-content-item-title {
+		display: none;
+    }
+}
+
+.hide-tab-titles { // hides all titles | add at component level
+    .tabCTL-content-item-title {
+        display: none;
+    }
+    .tabCTL-content-item-body {
+        p:first-child { margin-top: 1rem; }
+    }
+}
+
+.tabsCTL-minheight-auto {
+	&.tabsCTL-component .tabsCTL-content-items {
+		max-height: none;
+		min-height: auto;
+	}
+}
+
+.tabsCTL-minheight-300 {
+	&.tabsCTL-component .tabsCTL-content-items {
+		max-height: none;
+		min-height: 300px;
+	}
+}
+
+//****** Accordions ******//
+@media (min-width: 759px) {
+    .graphic-align-right {
+        .accordion-item-body-inner {
+            border: 0 !important;
+        }
+
+        .accordion-item-body-inner {
+            display: inline-block;
+            border: @accordion-item-body-border;
+            border-top: 0;
+                
+            .accordion-item-text {
+                position: relative;
+                float: left; width: 50%;
+            }
+            
+            .accordion-item-graphic {
+                position: relative;
+                vertical-align: top;
+                float: right; width: 50%;
+                padding: 0 0 4px 20px; // 20px 0 4px 20px;
+            }
+            
+            .graphic-attribution {
+                width: 50%;
+                margin: 0 50%;
+            }
+        }
+    }
+}
+
+//****** "Hotgrid" in accordions ******//
+.justify-start {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    p { 
+        .graphic-attribution; 
+        margin-right: 10px; 
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.justify-space-between {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    p { 
+        .graphic-attribution; 
+        margin-right: 10px; 
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .justify-start;
+    }
+}
+
+//****** Hotgrid ******//
+@media (min-width: 759px) {
+    .left-align-tn {
+        &.hotgrid-component {
+            .hotgrid-grid-inner {
+                justify-content: left !important;;
+        
+                .hotgrid-grid-listitem:only-child {
+                    width: auto !important;
+                }
+            }
+        }
+    }
+}
+
+.hotgrid-item-title-width-auto {
+    &.hotgrid-component {
+        .hotgrid-item-title {
+            width: auto !important;
+        }
+    }
+}
+
+//****** Graphics ******//
+.left-align-graphic-widget {
+    .graphic-widget {
+        text-align: left;
+    }
+    .graphic-attribution {
+        color: @mid-grey;
+        font-size: inherit !important;
+        line-height: inherit !important;
+        text-align: left;
+    }
+}
+
+//****** Responsive iframe ******//
+.responsive-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+}
+
+.responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+//****** Hide Section ******//
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+.hide-section {
+    overflow: hidden;
+
+    .article-inner {
+        padding: 0 !important;
+    }
+
+    .block-inner {
+        .text-hide;
+        height: 10px;
+        padding: 0 !important; 
+        background-color: transparent !important;
+
+        .component-inner {
+            .text-hide;
+            padding: 0 !important;
+            p { margin: 0 !important; }
+        }
+    }
+}

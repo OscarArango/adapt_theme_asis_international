@@ -1,0 +1,211 @@
+// Title margin
+@menu-title-margin-bottom: @title-text-margin; // global | in branding.less
+
+// Title padding
+@menu-body-padding: 0 20px 0; // 10px
+
+// Body margin
+@menu-body-margin-bottom: @body-text-margin; // global | in branding.less
+
+// Menu header
+@menu-header-padding-top: @menu-header-padding;
+@menu-header-padding-bottom: @menu-header-padding;
+
+// Menu item margins
+@menu-block-title-margin-top: 4px;
+@menu-block-title-margin-bottom: 10px; // global | in branding.less | default @title-text-margin
+@menu-block-instruction-margin-bottom: @instruction-text-margin; // global | in branding.less
+
+
+.menu {
+  background: @white;
+
+  .menu-container {
+    .responsive-large;
+    .responsive-medium;
+    .responsive-small;
+  }
+
+  .menu-container-inner {
+    padding: @menu-body-padding;
+  }
+
+  .menu-item {
+    width: 100%;
+    margin-top: 20px; //@menu-body-padding-bottom;
+    margin-bottom: 20px;
+  }
+
+  .menu-item-inner {
+    color: @menu-item-text-color;
+    background: @menu-item-inner-background-color;
+    //background: @background-color;
+    position: relative;
+    max-width: none !important;
+    margin: 0 2% !important;
+    padding: 23px 15px !important;
+  }
+
+  .menu-item-title {
+    margin: 8px 0 !important;
+    float: left;
+  }
+
+  .menu-item-button {
+    padding: @menu-body-padding;
+    float: right;
+
+    button {
+      padding: 10px 20px !important;
+    }
+
+    a {
+      text-decoration: none;
+      background-color: @button-color;
+      color: @button-text-color;
+      padding: @button-padding;
+
+      &:hover {
+        background-color: @button-hover-color;
+        color: @button-text-hover-color;
+      }
+
+      &.visited {
+        background-color: @button-disabled-color;
+        color: @button-text-disabled-color;
+      }
+    }
+  }
+
+  .menu-item-duration {
+    float: right;
+    .dir-rtl & {
+      float: left;
+    }
+  }
+
+  .menu-title, .menu-body {
+    color: @menu-header-title-text-color; //color: @inverted-foreground-color;
+    margin-bottom: @menu-title-padding-bottom;
+  }
+
+  .menu-item-content {
+    display: none;
+    margin-top: 20px;
+
+    &::after {
+      content: " ";
+      display: block;
+      height: 0;
+      clear: both;
+    }
+
+    .menu-item-graphic {
+      width: 40%;
+      display: inline-block;
+      float: left;
+    }
+
+    .menu-item-body {
+      float: left;
+      width: 60%;
+      padding: 0 !important;
+      margin: 0 !important;
+      display: inline-block;
+
+      .menu-item-body-inner {
+        margin-left: 20px; //@menu-body-padding-sides;
+      }
+    }
+
+    @media all and (min-width: @device-width-medium) {
+      .menu-item-body .menu-item-body-inner p:first-child  {
+          margin-top: 0;
+      }
+    }
+
+    @media all and (max-width: @device-width-medium) {
+      .menu-item-body {
+        width: 100%;
+
+        .menu-item-body-inner {
+          margin-left: 0;
+        }
+      }
+
+      .menu-item-graphic {
+        width: 100%;
+      }
+    }
+
+    .fullwidth {
+      width: 100%;
+
+      .menu-item-body-inner{
+        margin-left: 0;
+      }
+    }
+
+  }
+
+  .clear {
+    clear: both;
+  }
+
+  .page-level-progress-menu-item{
+    margin: 10px 0;
+    position: static !important;
+  }
+
+  .menu-item-content-button {
+    float: right;
+    display: block;
+    margin-right: 10px;
+    position: relative;
+    height: round((@button-text-font-size/100) * @button-text-line-height + 20);
+    width: round((@button-text-font-size/100) * @button-text-line-height + 20);
+    padding: 14px !important;
+    background:none;
+
+    .icon{
+      padding: 10px;
+      width: round((@button-text-font-size/100) * @button-text-line-height);
+      height: round((@button-text-font-size/100) * @button-text-line-height);
+      position: absolute;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: 50%;
+      .transition-all-colors;
+      background-color:@button-color;
+
+      &:hover {
+        background-color:@button-color-hover;
+      }
+
+      &.closed {
+        color: @button-text-color;
+      }
+
+      &.open {
+        background-color: @button-disabled-color;
+        color: @button-text-disabled-color;
+      }
+    }
+
+
+  }
+
+  @media all and (max-width: @device-width-small) {
+
+    //at smaller sizes vanilla hard codes heights rather than using variables
+    .menu-item-content-button {
+      height: (14px/100) * @button-text-line-height + 20px;
+      width: (14px/100) * @button-text-line-height + 20px;
+
+      svg{
+        width: (14px/100) * @button-text-line-height;
+        height: (14px/100) * @button-text-line-height;
+      }
+    }
+  }
+}

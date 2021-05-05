@@ -1,0 +1,59 @@
+/* Reset the style of list */
+ul {
+  position: relative;
+  list-style: none;
+  padding: 0;
+}
+
+/* Add indentation of nested lists and remove bottom margin */
+ul ul {
+  margin: 0;
+}
+
+/* Add general display for bullets and numbers */
+ul li {
+  padding-left: 1em;
+  margin: .25em 1em; // .25em 0;
+}
+
+ul li:before {
+  position: absolute;
+  left: 20px; //0;
+  color: @font-color;
+}
+
+/* Style for bullet lists */
+ul li:before {
+    font-family: georgia;
+    font-weight: bold;
+	content: '\2022';
+	color: @blue;
+}
+
+ul ul > li:before { // second indent
+    color: @green;
+}
+
+ul ul ul > li:before { // third indent
+    color: @red;
+}
+
+// Reset counter for each list 
+ol {
+	counter-reset: listitem;
+}
+
+ol > li:before,
+ol ol > li:before,
+ol ol ol > li:before { // remove coloured bullets
+    padding-right: 0;
+    font-size: 0;
+    color: transparent;
+}
+
+ol > li { // reset spacing
+    padding-left: 0;
+    text-indent: 0;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+}

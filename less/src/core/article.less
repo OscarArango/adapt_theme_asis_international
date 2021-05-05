@@ -1,0 +1,116 @@
+// Title margin
+@article-title-margin-bottom: @title-text-margin; // global | in branding.less
+
+// Body margin
+@article-body-margin-bottom: @body-text-margin; // global | in branding.less
+
+// Body padding
+@article-body-padding: 10px 20px 40px 20px;
+
+// Article padding
+@article-padding-top: @article-padding;
+@article-padding-bottom: @article-padding;
+
+// Article instruction
+@article-instruction-margin-bottom: @instruction-text-margin; // global |  in branding.less
+
+//****** Article styling ******//
+.article {
+    clear: both;
+
+    /* Alternating article colours - uncomment to use */
+     &:nth-child(even) {
+        background-color: @alternating-bg-color-02;
+    }
+
+    &:nth-child(odd) {
+        background-color: @alternating-bg-color-01;
+    } 
+    /* end - Alternating article block colours */
+
+    .article-inner {
+        max-width: 1024px;
+        margin: auto;
+
+        //background-color: @article-inner-background-color; // uncomment to set all articles to have a white background. Helpful when there are full page background images being used.
+
+        padding: @article-padding-top 0 @article-padding-bottom;
+        // reduce padding as screen width decreases
+        @media all and (max-width: (@device-width-large + 20px)) {
+            padding: (@article-padding-top / 2) 0 (@article-padding-bottom / 2);
+        }
+
+        @media all and (max-width: (@device-width-small + 20px)) {
+            padding: (@article-padding-top / 3) 0 (@article-padding-bottom / 3);
+        }
+    }
+
+    .article-header {
+        max-width: @device-width-large;
+        margin: auto;
+        padding: 0;
+    }
+
+    .article-title {
+        padding: 20px 20px 0; // 10px 20px 0px;
+
+        /*@media all and (max-width: (@device-width-large + 20px)) {
+            padding: 10px 0 0;
+        }*/
+
+        color: @article-title-color;
+        background-color: @article-background-color;
+        text-align: left;
+
+        .dir-rtl & {
+            text-align: right;
+        }
+    }
+
+    /*
+    &.grey-bottom-border {
+        .article-title-inner {
+            border-bottom: 1px solid #e6e6e6;
+            //margin-bottom: @article-title-margin-bottom;
+        }
+    }
+
+
+    &.green-bg {
+        .article-title {
+            //padding: 10px 10px 20px;
+            //margin-bottom: @article-title-margin-bottom;
+            line-height: 0;
+            padding: 0;
+            border-bottom: 2px solid @brand-green;
+            //color: @title-color;
+            background-color: transparent;
+            text-align: left;
+
+            .dir-rtl & {
+                text-align: right;
+            }
+        }
+
+        .article-title-inner {
+            background: @brand-green;
+            color: @white;
+            display: inline-block;
+            padding: 0.25rem 0.75rem 0.1875rem;
+            font-size: 1.25rem;
+            line-height: 1.5;
+            border: 0;
+            margin: 0;
+        }
+    }
+    */
+    .article-body {
+        padding: @article-title-margin-bottom 20px @article-body-margin-bottom;
+        background-color: @article-background-color;
+    }
+
+    .article-instruction {
+        margin-bottom: @article-instruction-margin-bottom;
+        .instruction-text;
+    }
+}

@@ -1,0 +1,14 @@
+.stacklist-items {
+    height: auto !important;
+    padding-bottom: 70px;
+}
+
+.stacklist-item {
+    background-color: @light-grey;
+    color: @black;
+    border-left: 0.4em solid @brand-red;
+}
+
+.stacklist-button button {
+	width: auto;
+}

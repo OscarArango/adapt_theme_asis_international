@@ -1,0 +1,90 @@
+// Title margin
+@page-title-margin-bottom: @title-text-margin; // global |  in branding.less
+
+// Title padding
+@page-body-padding-top: 0;
+@page-body-padding-sides: 20px;
+@page-body-padding-bottom: 0;
+@page-body-padding: @page-body-padding-top @page-body-padding-sides @page-body-padding-bottom;
+
+// Page header
+@page-padding-top: @page-header-padding;    // global |  in branding.less
+@page-padding-bottom: @page-header-padding; // global |  in branding.less
+
+@page-instruction-margin-bottom: @instruction-text-margin; // global |  in branding.less
+
+//****** Page styling ******//
+.page {
+    background-color: transparent;
+
+    .page-header {
+        position: relative; // added so that img/bg can be positioned relative to this element
+        /*bg-color:*/
+        background-image: url(assets/ASIS-Header-Asset.jpg);
+        background-position: right;
+        background-repeat: no-repeat;
+        background-color: rgb(13, 14, 19);
+        //display: none;
+    }
+    /*.img-bg {
+        position: absolute;
+        height: 100%;
+        top: 0;
+        right: 0;
+        // Fade image/mask edges
+        opacity: 0.5;
+        mask: -moz-linear-gradient(left, transparent 0%, #000 50%,#000 100%,transparent 100%);
+        mask: linear-gradient(to right, transparent 0%, #000 50%,#000 100%,transparent 100%);
+        -webkit-mask: -webkit-linear-gradient(left, transparent 0%, #000 50%,#000 100%,transparent 100%);
+
+        @media all and (max-width: (@device-width-small + 20px)) {
+            display: none;
+        }
+    } */
+    .page-header-inner {
+        padding: @page-padding-top 0 @page-padding-bottom;
+
+        @media all and (max-width: (@device-width-large + 20px)) {
+            padding: @page-padding-top 20px 10px;
+        }
+
+        @media all and (max-width: (@device-width-small + 20px)) {
+            padding: @page-padding-top 10px 10px;
+        }
+    }
+
+    .page-header-content {
+        max-width: @device-width-large;
+        margin: auto;
+    }
+
+    .page-header-content-inner {
+        text-align: left;
+    }
+
+    .page-title {
+        color: @page-title-text-color;
+        text-shadow: 0 2px 5.82px rgba(40,38,38,.73);
+        position: relative;
+        padding: @page-body-padding;
+
+        @media all and (max-width: (1024px)) {
+            padding: 0;
+        }
+
+        margin-bottom: 0;
+        z-index: 1;
+    }
+
+    .page-body {
+        color: @page-body-text-color;
+        text-shadow: 0 2px 5.82px rgba(40,38,38,.73);
+        margin-top: @page-title-margin-bottom;
+        padding: @page-body-padding;
+    }
+
+    .page-instruction {
+        margin-bottom: @page-instruction-margin-bottom;
+        .instruction-text;
+    }
+}

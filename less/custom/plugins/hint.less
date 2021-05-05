@@ -1,0 +1,69 @@
+.hint-extension {
+    .hint-extension-widget {
+        width: 350px;
+        right: 10px;
+        top: -4px; //4px;
+
+        @media all and (max-width: 768px) {
+            width: 88%;
+            max-width: 350px;
+            right: 20px;
+            top: -3px;
+        }
+    }
+
+    .hint-extension-item {
+        background-color: @hint-extension-item-background-color !important;
+
+        .hint-extension-item-inner {
+            padding: 15px;
+
+            .hint-extension-item-title {
+                font-size: 22px;
+                font-weight: @font-weight-regular;
+
+                .hint-extension-item-title-inner {
+                    padding-bottom: 5px;
+                    color: @hint-extension-item-title-inner-color;
+                    border-bottom: @hint-extension-item-title-inner-border;
+                }
+            }
+            .hint-extension-item-body {
+                .p-font-size;
+                a { word-break: break-word; }
+                //color: @white !important;
+            }
+        }
+    }
+
+    .hint-extension-button {
+        /*&.icon {
+            font-size: 30px !important;
+        } */
+
+        &.icon-question:before {
+            content: "\e636"; // changes icon to a plus sign
+        }
+
+        background-color: @hint-extension-button-background-color;
+
+        //right: -2px; // -16px  // changes the position of the hint button, left or right by adjusting the pixel amount.
+        top: -26px; // -16px; // changes the position of the hint button, up or down by adjusting the pixel amount.
+
+        @media all and (max-width: (1024px)) {
+            right: 4px;
+            top: -20px;
+        }
+
+        @media all and (max-width: (@device-width-small + 20px))  {
+            right: 0px;
+            top: -24px;
+        }
+
+        .no-touch & {
+            &:hover {
+                background-color: @hint-extension-button-background-color;
+            }
+        }
+    }
+}

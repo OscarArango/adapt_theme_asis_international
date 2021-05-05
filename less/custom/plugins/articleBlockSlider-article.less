@@ -1,0 +1,133 @@
+// Article Block Slider | https://github.com/cgkineo/adapt-articleBlockSlider
+
+.article-block-slider-enabled {
+  .article-inner {
+    padding: 30px 0 30px !important;
+  }
+
+  .article-title, .article-body {
+    margin-bottom: -15px;
+  }
+
+  .article-body {
+		padding: 20px 20px 6px !important;
+	}
+
+  .has-tabs {
+    .article-block-toolbar {
+      background: @component-background-color;
+      padding: 15px 20px 0px; // 20px 20px 0;
+    }
+
+  .item-button-container {
+    border-bottom: 2px solid @article-block-slider-border-color;
+    
+    .button[disabled="disabled"], button[disabled="disabled"],
+    .button.disabled, button.disabled, .button:disabled, button:disabled {
+      background: transparent !important;
+    }
+  }
+  
+  // Tab Buttons
+  .item-button {
+    //width: auto !important;
+    font-size: 0.85em;
+    line-height: 1.5;
+    text-transform: uppercase;
+
+    border-left: 1px solid @article-block-slider-border-color;
+        margin-bottom: 4px;
+
+    &:first-child {
+      border-left: 0;
+
+      /*.item-button-inner {
+        margin-left: 0;
+      } */
+    }
+
+    .no-touch &:hover {
+      .item-button-inner {
+        background-color: @item-button-inner-inactive-background-color;
+      }
+    }
+
+    &[disabled="disabled"] { // active tab
+      .no-touch &:hover {
+        .item-button-inner {
+          color: @item-button-inner-active-color;
+          background-color: @item-button-inner-active-background-color;
+        }
+      }
+
+      .item-button-inner {
+        color: @item-button-inner-active-color;
+        background-color: @item-button-inner-active-background-color;
+        //border-bottom: thin @article-block-slider-border-color;
+
+        .no-touch &:hover {
+          color: @item-button-inner-active-color;
+          background-color: @item-button-inner-active-background-color;
+        }
+      }
+    }
+  }
+
+  .item-button-inner { // inactive tabs
+    color: @item-button-inner-inactive-color;
+    background-color: @item-button-inner-inactive-background-color;
+    //border-radius: 3px 3px 0 0;
+    font-weight: @font-weight-bold;
+    padding: 11px 15px;
+  }
+
+    .component .component-inner {
+      padding-top: 20px;
+    }
+  }
+  
+  .has-arrows {
+    .item-button-arrow {
+      margin-top: 0;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+
+      &[data-block-slider='right'] { right: 5px; }
+      &[data-block-slider='left']  { left: 5px; }
+    }
+
+    .item-button-arrow .icon {
+      margin: 0;
+      //font-size: 24px;
+      line-height: 0;
+      &.icon-controls-right { margin-left: 4px; }
+      &.icon-controls-left  { margin-right: 4px; }
+    }    
+  }
+
+  @media (min-width: 759px) {
+    .has-tabs {
+      .block .block-inner {
+        padding: 0 !important; // Remove padding. It made the width of the block appear 10px smaller than other blocks. Noticeable when there is a background color on component-container.
+      }
+    }
+
+    .has-arrows {
+      .block .block-inner { padding: 20px 0 0 !important;}
+      .component .component-inner { padding-top: 0 !important; }
+    }
+  }
+
+  @media (max-width: 759px) {
+    &.article .article-body { padding: 20px 20px 10px !important;  }
+
+    .component .component-inner { padding-top: 0; }
+  }
+
+  @media (max-width: 539px) {
+    &.article .article-inner { padding: 0 !important; }
+
+    .article-title { margin-bottom: 0; }
+  }
+}

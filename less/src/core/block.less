@@ -1,0 +1,54 @@
+// Title margin
+@block-title-margin-bottom: @title-text-margin; // global | in branding.less
+
+// Body padding
+@block-body-padding-top: 0;
+@block-body-padding-sides: 20px;
+@block-body-padding-bottom: 0;
+@block-body-padding: @block-body-padding-top @block-body-padding-sides @block-body-padding-bottom;
+
+// Body margin
+@block-body-margin-bottom: @body-text-margin;  // global | in branding.less
+
+// Block instruction
+@block-instruction-margin-bottom: @instruction-text-margin;  // global | in branding.less
+
+//****** Block styling ******//
+.block.nth-child-1 .block-inner { // add top padding to first block in each article
+    padding-top: 20px;
+}
+
+.block {
+    background-color: transparent;
+
+    .block-inner {
+        max-width: @device-width-large;
+        margin: auto;
+        background-color: @block-inner-background-color;
+
+        padding: @block-padding; // adjust in branding.less
+        @media all and (max-width: (@device-width-small + 20px)) {
+            padding: 0 10px;
+        }
+    }
+
+    .block-title {
+        padding: @block-body-padding;
+        margin-bottom: @block-title-margin-bottom;
+
+        color: @block-title-color;
+        text-align: left;
+
+        .dir-rtl & { text-align: right; }
+    }
+
+    .block-body {
+        padding: @block-body-padding;
+        margin-bottom: @block-body-margin-bottom;
+    }
+
+    .block-instruction {
+        margin-bottom: @block-instruction-margin-bottom;
+        .instruction-text;
+    }
+}

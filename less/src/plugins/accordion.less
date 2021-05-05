@@ -1,0 +1,115 @@
+.accordion-component {
+  .accordion-item {
+    margin-bottom: 5px;
+  }
+
+  .accordion-item-title {
+    color: @accordion-item-title;
+    background-color: @accordion-item-title-background-color;
+
+    padding: 10px 20px 10px (@icon-size+ (20px * 2));
+    font-size: 1.125rem;
+    line-height: 1.5;
+    font-weight: @font-weight-regular;
+    margin-bottom: 0;
+
+    .dir-rtl & {
+      padding-left: inherit;
+      padding-right: (@icon-size+ (20px * 2));
+    }
+
+    &.visited {
+      color: @accordion-item-title-visited;
+      background-color: @accordion-item-title-background-color-visited;
+      border-color: @accordion-item-title-background-color-visited;
+
+      .accordion-item-title-icon {
+        color: @accordion-item-title-background-color-visited;
+        background: @accordion-icon-background-color;
+      }
+    }
+
+    &.selected {
+      color: @accordion-item-title-selected;
+      background-color: @accordion-item-title-background-color-selected;
+      border-color: @accordion-item-title-background-color-selected;
+
+      .accordion-item-title-icon {
+        color: @accordion-item-title-background-color-selected;
+        background: @accordion-icon-background-color;
+      }
+    }
+
+    .no-touch & {
+      &:hover {
+        color: @accordion-item-title-hover;
+        background-color: @accordion-item-title-background-color-hover;
+        border-color: @accordion-item-title-background-color-hover;
+
+        .accordion-item-title-icon {
+          color: @accordion-item-title-background-color-hover;
+          background: @accordion-icon-background-color;
+        }
+      }
+
+      &.visited:hover {
+        color: @accordion-item-title-hover;
+        background-color: @accordion-item-title-background-color-visited-hover;
+        border-color: @accordion-item-title-background-color-visited-hover;
+
+        .accordion-item-title-icon {
+          color: @accordion-item-title-background-color-visited-hover;
+          background: @accordion-icon-background-color;
+        }
+      }
+
+      &.selected:hover {
+        background-color: @accordion-item-title-background-color-selected;
+
+        .accordion-item-title-icon {
+          color: @accordion-item-title-background-color-selected;
+          background: @accordion-icon-background-color;
+        }
+      }
+    }
+
+    .accordion-item-title-icon {
+      margin-top: -16px;
+      color: @accordion-icon-color;
+      background: @accordion-icon-background-color;
+      border: @accordion-icon-border;
+      border-radius: 50%;
+
+      font-size: 30px;
+      /*right: 20px;
+        left: auto;*/
+
+      .dir-rtl & {
+        left: inherit;
+        right: 20px;
+      }
+    }
+  }
+
+  .accordion-item-body {
+    color: @accordion-item-body-text;
+    background-color: @accordion-item-body-background-color;
+    border-color: @accordion-item-body-border-color;
+    border: @accordion-item-body-border;
+    border-top: 0;
+  }
+
+  .accordion-item-body-inner {
+    p:last-child { margin-bottom: 0; }
+    
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .accordion-item-graphic {
+    text-align: center;
+    padding: 20px 0 4px;
+  }
+}

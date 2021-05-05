@@ -1,0 +1,21 @@
+[tabindex="-1"]:focus {
+    outline: 0 !important;
+}
+
+/* Remove the default outline */
+a, button, .button, input {
+    &:focus {
+        outline: 0;
+    }
+}
+
+@focus-outline: 3px solid orange !important; // Focus outline is displayed when accessibility is enabled
+
+
+.focused,
+*:focus,
+input:focus + label {
+    .accessibility.no-touch & {
+        outline: @focus-outline;
+    }
+}

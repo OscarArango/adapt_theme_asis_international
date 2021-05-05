@@ -1,0 +1,22 @@
+{
+  "description": "Asis International",
+  "displayName": "Asis International",
+  "framework": ">=4",
+  "homepage": "https://github.com/crosstrainerlearning/adapt-theme-AsisInternational",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "keywords": [
+    "adapt-plugin",
+    "adapt-theme"
+  ],
+  "license": "GPLv3",
+  "main": "js/config.js",
+  "name": "adapt-theme-AsisInternational",
+  "theme": "Asis International",
+  "version": "0.3.4"
+}

@@ -1,0 +1,89 @@
+//****** Navigation styling ******//
+@navigation-height: 76px;
+@navigation-height-mobile: 50px;
+@navigation-padding-mobile: ((@navigation-height-mobile - @icon-size)/2);
+
+// logo ===================
+.location-id-course .menu-logo,
+.logo {
+    width: @logo-width;
+    height: @navigation-height;
+    float: left;
+    margin: 0 10px;
+    background-image: @logo-image;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: auto; // contain;
+}
+
+/* .logo {
+	.location-menu & {
+		display: none; // hide logo on menu pages
+	}
+} */
+
+.menu-logo {
+    .location-page & { // hide menu-logo on interior pages
+        display: none;
+    }
+}
+// ========================
+
+.navigation {
+    width: 100%;
+    height: @navigation-height;
+    background-color: @navigation-color;
+
+    // use either box-shadow or bottom-border, or neither
+    box-shadow: @navigation-box-shadow;
+    // border-bottom: @navigation-border; 
+
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    .navigation-inner {
+        max-width: 75rem; // 1,200px // uncomment to set a max-width 
+        margin: auto;
+        width: 100%;
+        //background: @brand-red;
+    }
+
+    .icon {
+        height: @navigation-height;
+        padding: 0;
+        margin: 0 10px;
+        color: @navigation-icon-color;
+        font-size: 40px;
+        line-height: normal;
+        .transition-color;
+
+        .no-touch &:hover {
+            color: @navigation-icon-color-hover;
+        }
+    }
+
+    .skip-nav-link {
+        background-color: @button-color;
+        border-radius: 0;
+        color: @button-text-color;
+        display: none;
+        left: 0;
+        margin-top: 0;
+        padding: 10px 20px;
+        position: absolute;
+        top: -46px;
+        -webkit-transition: top .2s ease-out;
+        transition: top .2s ease-out;
+        width: auto;
+        z-index: 100;
+        .accessibility & {
+            display: inline-block;
+        }
+        &:focus {
+            top: 0;
+        }
+    }
+}

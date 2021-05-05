@@ -1,0 +1,102 @@
+.hotgrid-component {
+    .hotgrid-grid-item {
+        width: auto;
+     }
+	.hotgrid-item-image img {
+		margin: auto;
+	}
+    .hotgrid-item-title {
+        .graphic-attribution;
+	}
+	.hotgrid-item-title-inner {
+		max-width: 90%;
+		margin: auto;
+	}
+    .hotgrid-item-icon {
+        display: none;
+    }
+}   
+
+//****** Hotgrid item states - css ******//
+// remove grey overlay
+.hotgrid-item-states-css { 
+	border: none !important;
+
+	&.visited:after {
+		background-color: transparent !important;
+	}
+}
+
+//****** Hotgrid notify content layout ******//
+.notify.hotgrid {
+	.notify-popup {
+		background-color: @notify-popup-background-color;
+	}
+
+	.notify-popup-content-inner {
+		.hotgrid-popup {
+			border: 0;
+			margin: 0;
+			padding: 0;
+		}
+	
+		.hotgrid-popup-count,
+		.hotgrid-popup-controls.back,
+		.hotgrid-popup-controls.next,
+		.hotgrid-popup-controls.disabled {
+			display: none;
+		}
+	
+		.hotgrid-popup-toolbar {
+			background-color: transparent;
+			height: 0;
+		}
+	
+		.hotgrid-popup-close {
+			padding: 5px !important;
+			margin: 20px 10px;
+			border-radius: 50%;
+			border: @notify-popup-done-border;
+			background: @notify-popup-done-background;
+		}
+	
+		/*.hotgrid-popup-done {
+			right: -10px;
+			top: -30px;
+		} */
+	
+		.hotgrid-item-content {
+			width: 100%;
+			float: none;
+			padding-right: 30px;
+		}
+
+		.hotgrid-content-title {
+			.h3;
+			color: @notify-popup-title;
+			margin-bottom: @notify-title-padding-bottom;
+		}
+
+		.hotgrid-content-body {
+			.p-font-size;
+			color: @notify-popup-body-text;
+
+			a {
+				text-decoration: underline;
+				color: inherit;
+			}
+		}
+		
+		.hotgrid-item-graphic {
+			width: auto;
+			height: auto;
+			margin-right: 30px;
+			padding: 0;
+			float: none;
+		}
+		
+		.hotgrid-item-graphic-inner img {
+		   display: inline-block;
+		}
+	}
+}

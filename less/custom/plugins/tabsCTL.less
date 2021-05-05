@@ -1,0 +1,100 @@
+.tabsCTL-component.tabCTL-layout-top {
+	.tabsCTL-widget {
+		padding-top: 26px;
+	}
+
+	.tabsCTL-content-items {
+		overflow-y: hidden;
+		background: transparent !important;
+		border: 0 !important;
+	}
+}
+
+.tabsCTL-content-items-inner {
+	padding: 10px !important;	
+}
+
+.tabCTL-content-item-title {
+    text-align: center;
+	margin-top: 10px;
+	margin-bottom: 0 !important;
+}
+
+.tabCTL-content-item-graphic {
+	text-align: center;
+}
+
+.tabsCTL-navigation {
+	border-bottom: 1px solid @tabsCTL-nav-border-color;
+}
+
+.tabsCTL-navigation-inner {
+    //font-family: @font-family-title !important;
+	font-size: 0.8em !important;
+}
+
+a.tabsCTL-navigation-item {
+	//width: auto !important;
+	padding: 0 1.19em !important;
+	margin-bottom: 3px !important;
+	border-right: 1px solid @tabsCTL-nav-item-border-color;
+	&:last-child {
+		border: 0;
+		@media all and (max-width: (@device-width-small + 20px)) {
+            border-right: 1px solid @tabsCTL-nav-item-border-color;
+        }
+	}
+}
+
+.tabsCTL-component {
+	@media (max-width: 759px) {
+		.tabsCTL-content-icon {
+			display: none !important;
+		}
+	}
+
+	.tabsCTL-navigation-item-inner {
+		background-color: transparent !important;
+		border-radius: 0 !important;
+		border: 0 !important;
+		text-align: center;
+		text-transform: uppercase;
+		color: @tabsCTL-nav-item-inner-color;
+		padding: 0 !important;
+		margin-right: 0;
+		font-weight: @font-weight-bold;
+
+		&.visited {
+			color: @tabsCTL-nav-item-inner-color-visited
+		}
+
+		&.selected {
+			color: @tabsCTL-nav-item-inner-color-selected;
+		}
+
+		.no-touch &:hover {
+			color: @tabsCTL-nav-item-inner-color-hover;
+
+			&.visited {
+				color: @tabsCTL-nav-item-inner-color-visited;
+			}
+
+			&.selected {
+				color: @tabsCTL-nav-item-inner-color-selected;
+				cursor: default;
+			}
+		}
+	}
+
+	.tabsCTL-content-items {
+		max-height: none;
+		min-height: 400px;
+		@media all and (max-width: (@device-width-small + 20px)) {
+            min-height: 200px;
+        }
+	}
+
+	.tabCTL-content-item-body {
+		p:last-child { margin-bottom: 0; }
+	}
+}

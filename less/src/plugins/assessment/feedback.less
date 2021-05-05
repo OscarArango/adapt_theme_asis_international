@@ -1,0 +1,15 @@
+//****** Notify | feedback ******//
+// Hide question title
+.correct .notify-popup-title-inner,
+.incorrect .notify-popup-title-inner { display: none !important; }
+
+h4 {
+    &.correct {
+        .title-mb;
+        color: darken(@validation-success, 15%) !important;
+    }
+    &.incorrect {
+        .title-mb;
+        color: darken(@validation-error, 7%) !important;
+    }
+}
